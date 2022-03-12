@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Upload from './Upload';
+import Copy from './Copy';
+import Pp from './Pp'
+import { BrowserRouter as Router, Route, Switch, Redirect, } from 'react-router-dom';
+import Om from './Om';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Upload/> */}
+      {/* <Copy /> */}
+      {/* <Pp/> */}
+      <Router>
+        <Switch>
+        <Route exact path='/table' component={Copy} />
+        <Route path='/:id' component={Pp}/>
+        <Route path='/' component={Om}/>
+        </Switch> 
+      </Router>
     </div>
   );
 }
